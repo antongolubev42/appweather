@@ -1,14 +1,27 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Weather App
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+  <h1> Please enter a city to see it's weather conditions</h1>
+<p>City Selected: <u> {{name}} </u></p>
+  <ion-input [(ngModel)]="name" placeholder="Input county name"></ion-input>
+ <button ion-button (click)="search()" round>Search</button>
+ <br>
+ <br>
+
+
+
+
+
+ <ion-list>
+   <ion-item *ngFor="let x of counties">{{x.main}}, {{x.description}}</ion-item>
+   <!-- <h2>{{weather.main}}</h2>
+   <h3>{{weather.description}}</h3> -->
+ </ion-list>
+ </ion-content>
+
