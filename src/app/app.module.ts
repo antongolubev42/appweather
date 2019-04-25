@@ -8,11 +8,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {HttpClientModule} from '@angular/common/http';
 import { CountyProvider } from '../providers/weather/weather';
+import {WeatherPage} from '../pages/weather/weather';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,WeatherPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,7 @@ import { CountyProvider } from '../providers/weather/weather';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,WeatherPage
   ],
   providers: [
     StatusBar,

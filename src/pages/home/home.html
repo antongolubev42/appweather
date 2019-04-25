@@ -6,9 +6,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg-image">
   <h1> Please enter a city to see it's weather conditions</h1>
-<p>City Selected: <u> {{name}} </u></p>
+  The city you have selected is: <b> {{name}} </b>
   <ion-input [(ngModel)]="name" placeholder="Input county name"></ion-input>
  <button ion-button (click)="search()" round>Search</button>
  <br>
@@ -17,11 +17,14 @@
 
 
 
-
+ 
  <ion-list>
-   <ion-item *ngFor="let x of counties">{{x.main}}, {{x.description}}</ion-item>
-   <!-- <h2>{{weather.main}}</h2>
-   <h3>{{weather.description}}</h3> -->
+   <!--Displays the weather conditions that are recieved from the api-->
+   <ion-item *ngFor="let x of counties">The weather conditions are : <b> {{x.main}}</b>, <br> Description of the weather: <b>{{x.description}}</b></ion-item>
+  
  </ion-list>
+
+ <button ion-button (click)="info()" round> Show App Info </button>
  </ion-content>
 
+ 

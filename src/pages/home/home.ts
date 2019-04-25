@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CountyProvider } from '../../providers/weather/weather';
+import{ WeatherPage} from '../../pages/weather/weather';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,7 @@ desc:string = "";
 
   }
 
-
+  //Retrieves the relevant data from the api
   search(){
     this.countyProvider.getCountyInfo(this.name).subscribe((data)=>
     {
@@ -23,4 +24,11 @@ desc:string = "";
       this.desc = data.weather[0];
     });
   }
+
+  //pushes to info page
+  info(){
+    this.navCtrl.push(WeatherPage);
+  }
+
+  
 }
